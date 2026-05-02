@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pho Hieu Anh — AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-2: #11121a;
+      --panel: #15161f;
+      --panel-2: #1c1d28;
+      --border: #2a2b39;
+      --text: #e7e9ee;
+      --muted: #9aa0ad;
+      --accent: #7c5cff;
+      --accent-2: #22d3ee;
+      --accent-3: #f472b6;
+      --good: #34d399;
+      --shadow: 0 10px 40px rgba(0, 0, 0, .4);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    code,
+    pre,
+    .mono {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: .92em
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(124, 92, 255, .18), transparent 60%),
+        radial-gradient(800px 500px at 100% 0%, rgba(34, 211, 238, .12), transparent 60%),
+        radial-gradient(700px 500px at 50% 110%, rgba(244, 114, 182, .10), transparent 60%);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 10, 15, .65);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: .3px
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 14px var(--accent)
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .nav-links a {
+      color: var(--muted)
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      text-decoration: none
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .2s ease;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      text-decoration: none
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #5b3df0);
+      border-color: transparent;
+      color: #fff
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      padding: 8px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 600
+    }
+
+    .lang-toggle button.active {
+      background: var(--accent);
+      color: #fff
+    }
+
+    @media(max-width:780px) {
+      .nav-links {
+        display: none
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px 80px
+    }
+
+    section {
+      margin-bottom: 96px;
+      scroll-margin-top: 80px
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-bottom: 14px
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0 0 16px;
+      letter-spacing: -.02em;
+      line-height: 1.15
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 800
+    }
+
+    h2 {
+      font-size: clamp(26px, 3.4vw, 38px);
+      font-weight: 700
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600
+    }
+
+    h4 {
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 760px
+    }
+
+    .hero {
+      padding-top: 30px
+    }
+
+    .hero h1 .grad {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2) 60%, var(--accent-3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .hero-cta {
+      margin-top: 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    @media(max-width:780px) {
+
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: all .25s ease;
+      position: relative;
+      overflow: hidden
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #3a3b4d;
+      box-shadow: var(--shadow)
+    }
+
+    .card .tag {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--accent-2);
+      background: rgba(34, 211, 238, .08);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: .05em;
+      font-weight: 600
+    }
+
+    .card .meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14.5px
+    }
+
+    .card ul li {
+      margin-bottom: 6px
+    }
+
+    .card ul li b {
+      color: var(--text);
+      font-weight: 600
+    }
+
+    .card h4 {
+      color: var(--accent-2);
+      margin: 6px 0
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--border)
+    }
+
+    .skill-row:last-child {
+      border-bottom: 0
+    }
+
+    .skill-row .label {
+      font-weight: 600;
+      color: var(--text)
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .chip {
+      font-size: 12.5px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: all .2s
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--text)
+    }
+
+    @media(max-width:680px) {
+      .skill-row {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 30px
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center
+    }
+
+    .stat .num {
+      font-size: 26px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .stat .lbl {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px
+    }
+
+    @media(max-width:680px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 14px
+    }
+
+    @media(max-width:680px) {
+      .courses {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .course {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .02);
+      font-size: 13.5px;
+    }
+
+    .course .grade {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 6px
+    }
+
+    .grade.aplus {
+      background: rgba(52, 211, 153, .15);
+      color: #34d399
+    }
+
+    .grade.a {
+      background: rgba(34, 211, 238, .15);
+      color: #22d3ee
+    }
+
+    .grade.bplus {
+      background: rgba(124, 92, 255, .18);
+      color: #a48bff
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    /* Light theme */
+    html[data-theme="light"] {
+      --bg: #f7f7fb;
+      --bg-2: #ffffff;
+      --panel: #ffffff;
+      --panel-2: #f3f4f9;
+      --border: #e5e7ee;
+      --text: #0e0f15;
+      --muted: #5a6172
+    }
+
+    html[data-theme="light"] body::before {
+      background: radial-gradient(1000px 600px at 10% -10%, rgba(124, 92, 255, .10), transparent 60%), radial-gradient(800px 500px at 100% 0%, rgba(34, 211, 238, .10), transparent 60%)
+    }
+
+    html[data-theme="light"] .nav {
+      background: rgba(255, 255, 255, .75)
+    }
+
+    html[data-theme="light"] .course {
+      background: rgba(0, 0, 0, .02)
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="brand-dot"></span><span>Pho Hieu Anh</span></div>
+      <nav class="nav-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#server" data-i18n="nav.server">Server</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#education" data-i18n="nav.edu">Education</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button data-lang="en" class="active">EN</button>
+          <button data-lang="vi">VI</button>
+        </div>
+        <button class="btn" id="themeBtn" title="Toggle theme">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="eyebrow" data-i18n="hero.eyebrow">AI Engineer · LLM Systems · Multi-Agent</div>
+      <h1>
+        <span data-i18n="hero.hi">Hi, I'm</span>
+        <span class="grad">Pho Hieu Anh</span>.
+      </h1>
+      <p class="lead" data-i18n="hero.lead">
+        Final-year Computer Science student building self-hosted, production-grade AI ecosystems —
+        from LangGraph ReAct orchestration and Model Context Protocol microservices, to hybrid
+        retrieval, GPU-accelerated OCR, and hallucination guardrails. Zero managed cloud AI required.
+      </p>
+      <div class="hero-meta">
+        <span>📍 <span data-i18n="hero.loc">Hanoi, Vietnam</span></span>
+        <span>🎓 <span data-i18n="hero.edu">NEU · Computer Science · 2022–2026</span></span>
+        <span>📊 <span data-i18n="hero.gpa">GPA 3.32 / 4.0</span></span>
+        <span>🏆 <span data-i18n="hero.award">2nd · AI Olympics 2025 (NCT)</span></span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn primary" href="#projects" data-i18n="hero.cta1">View projects</a>
+        <a class="btn" href="mailto:discordhieuanh@gmail.com" data-i18n="hero.cta2">Get in touch</a>
+        <a class="btn" href="CV_PhoHieuAnh_AI_ENGINEER.pdf" target="_blank" data-i18n="hero.cta3">Download CV</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">12</div>
+          <div class="lbl" data-i18n="stat.containers">Docker services</div>
+        </div>
+        <div class="stat">
+          <div class="num">3</div>
+          <div class="lbl" data-i18n="stat.mcp">MCP microservices</div>
+        </div>
+        <div class="stat">
+          <div class="num">~75%</div>
+          <div class="lbl" data-i18n="stat.vram">VRAM saved (NF4)</div>
+        </div>
+        <div class="stat">
+          <div class="num">119</div>
+          <div class="lbl" data-i18n="stat.credits">Credits earned</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="eyebrow" data-i18n="about.eyebrow">About me</div>
+      <h2 data-i18n="about.title">Translating AI research into shipping systems.</h2>
+      <p class="lead" data-i18n="about.body">
+        I designed and implemented every layer of a multi-agent system from the ground up — agent
+        orchestration, tool protocol, retrieval, vision, and observability. My strongest competency
+        is taking cutting-edge research and turning it into containerized, deployment-ready
+        infrastructure that runs entirely on private hardware.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="eyebrow" data-i18n="skills.eyebrow">Tech stack</div>
+      <h2 data-i18n="skills.title">Technical skills</h2>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.agent">Agent &amp; Reasoning</div>
+        <div class="chips">
+          <span class="chip">LangGraph (ReAct)</span><span class="chip">Model Context Protocol</span>
+          <span class="chip">Multi-step Tool Calling</span><span class="chip">CoT / Few-shot</span>
+          <span class="chip">Loop Detection &amp; Budgets</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.llm">LLM &amp; Inference</div>
+        <div class="chips">
+          <span class="chip">HuggingFace Transformers</span><span class="chip">4-bit NF4 (bitsandbytes)</span>
+          <span class="chip">Mistral-7B</span><span class="chip">Llama-3</span>
+          <span class="chip">Qwen</span><span class="chip">bfloat16</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.rag">RAG &amp; Search</div>
+        <div class="chips">
+          <span class="chip">Hybrid (BM25 + KNN)</span><span class="chip">Elasticsearch 8.x</span>
+          <span class="chip">ChromaDB</span><span class="chip">Pinecone</span>
+          <span class="chip">Sentence Transformers</span><span class="chip">Reranking</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.cv">Computer Vision / OCR</div>
+        <div class="chips">
+          <span class="chip">GOT-OCR 2.0</span><span class="chip">PyMuPDF</span>
+          <span class="chip">pdf2image / Tesseract</span><span class="chip">PIL preprocessing</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.guard">Quality &amp; Guardrails</div>
+        <div class="chips">
+          <span class="chip">BERTScore</span><span class="chip">LLaMA-1B Inspector</span>
+          <span class="chip">Fuzzy Duplicate Detection</span><span class="chip">Unicode Normalization</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.web">Web Intelligence</div>
+        <div class="chips">
+          <span class="chip">Firecrawl + Playwright</span><span class="chip">SearXNG</span>
+          <span class="chip">RabbitMQ</span><span class="chip">Markdown Extraction</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.api">Backend &amp; API</div>
+        <div class="chips">
+          <span class="chip">FastAPI</span><span class="chip">httpx / asyncio</span>
+          <span class="chip">REST microservices</span><span class="chip">LangGraph state machines</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.db">Databases &amp; Caching</div>
+        <div class="chips">
+          <span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">Elasticsearch</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="label" data-i18n="skills.infra">Infra &amp; DevOps</div>
+        <div class="chips">
+          <span class="chip">Docker / Compose</span><span class="chip">Nginx Reverse Proxy</span>
+          <span class="chip">NVIDIA GPU pinning</span><span class="chip">Arize Phoenix (OTEL)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVER / HARDWARE -->
+    <section id="server">
+      <div class="eyebrow" data-i18n="server.eyebrow">Self-hosted infrastructure</div>
+      <h2 data-i18n="server.title">Server &amp; Hardware Management</h2>
+      <p class="lead" data-i18n="server.lead">
+        Toàn bộ hệ thống multi-agent của tôi chạy trực tiếp trên một workstation cá nhân — không EC2,
+        không vendor-lock. Tôi tự quản trị từ tầng OS, GPU driver, container runtime cho tới
+        observability, dùng WSL2 làm môi trường Linux production-grade trên Windows.
+      </p>
+
+      <div class="grid grid-2" style="margin-top:24px">
+        <article class="card">
+          <span class="tag">WORKSTATION</span>
+          <h3 data-i18n="server.rig">Personal AI Rig — 24/7 Inference Node</h3>
+          <ul>
+            <li><b>CPU:</b> Intel Core <b>Ultra 7 265K</b> · 20 cores / 20 threads</li>
+            <li><b>RAM:</b> 32 GB DDR5</li>
+            <li><b>GPU:</b> NVIDIA <b>RTX 5080</b> · <b>16 GB VRAM</b> (Blackwell, CUDA 12.x)</li>
+            <li><b>Storage:</b> 500 GB NVMe SSD</li>
+            <li><b>Host OS:</b> Windows 11</li>
+            <li><b>Dev/Runtime:</b> WSL2 · Ubuntu 22.04 LTS</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag">OPS</span>
+          <h3 data-i18n="server.ops">Operations &amp; Tuning</h3>
+          <ul>
+            <li data-i18n="server.l1"><b>VRAM budgeting on 16 GB:</b> 4-bit NF4 quantization + bfloat16 to fit
+              Mistral-7B + LLaMA-3.2-1B + GOT-OCR concurrently.</li>
+            <li data-i18n="server.l2"><b>GPU pinning</b> via Docker <code>--gpus</code> &amp;
+              <code>CUDA_VISIBLE_DEVICES</code>; isolated per-service to prevent OOM cascades.</li>
+            <li data-i18n="server.l3"><b>WSL2 tuning:</b> custom <code>.wslconfig</code> (memory cap, swap, kernel args)
+              + systemd enabled for clean Docker/Nginx services.</li>
+            <li data-i18n="server.l4"><b>NVIDIA Container Toolkit</b> bridging Windows driver → WSL2 → Docker, validated
+              with <code>nvidia-smi</code> inside containers.</li>
+            <li data-i18n="server.l5"><b>Reverse proxy:</b> Nginx terminates traffic, routes to FastAPI / 3 MCP services
+              / Phoenix UI on a private Docker network.</li>
+            <li data-i18n="server.l6"><b>Observability:</b> Arize Phoenix (OTEL) traces every ReAct step; Docker
+              healthchecks + restart policies for unattended operation.</li>
+            <li data-i18n="server.l7"><b>Storage hygiene on 500 GB:</b> volume-mounted model cache, periodic prune of
+              dangling images/layers, logs rotated.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="eyebrow" data-i18n="proj.eyebrow">Selected work</div>
+      <h2 data-i18n="proj.title">Projects</h2>
+
+      <div class="grid" style="margin-top:24px;gap:24px">
+
+        <!-- AIchat -->
+        <article class="card">
+          <span class="tag">FLAGSHIP</span>
+          <h3>AIchat — <span data-i18n="proj.aichat.sub">Self-Hosted Multi-Agent AI Ecosystem</span></h3>
+          <div class="meta">2024 – 2025 · Python · LangGraph · MCP · Docker · CUDA</div>
+          <p data-i18n="proj.aichat.desc">
+            A Vietnamese-native, on-prem agentic RAG platform: a LangGraph ReAct loop driving Qwen2.5-7B
+            across three Model Context Protocol microservices (Local Data, Web Agent, OCR Vision), with
+            hybrid retrieval, GPU-accelerated OCR, and BERTScore hallucination middleware — wired
+            together as a 12-container Docker Compose stack. No external LLM keys.
+          </p>
+          <div class="grid grid-2" style="margin-top:14px;gap:14px">
+            <div>
+              <h4 data-i18n="proj.aichat.h1">Agent Orchestration (ReAct)</h4>
+              <ul>
+                <li data-i18n="proj.aichat.l1"><b>Multi-node LangGraph StateGraph</b> driving a full ReAct loop with
+                  structured output parsing.</li>
+                <li data-i18n="proj.aichat.l2"><b>3-layer loop prevention</b>: tool budget, exact-duplicate, and fuzzy
+                  duplicate (Unicode normalization + sorted word sets).</li>
+                <li data-i18n="proj.aichat.l3"><b>Auto web-search intent detection</b> with 35+ keyword patterns
+                  enabling zero-config search routing.</li>
+                <li data-i18n="proj.aichat.l4">Force-Final-Answer injection &amp; server-side query sanitization
+                  protecting internal metadata.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 data-i18n="proj.aichat.h2">MCP Architecture</h4>
+              <ul>
+                <li data-i18n="proj.aichat.l5">Decoupled reasoning from tool execution via 3 MCP services: Local Data
+                  (:8011), Web Agent (:8012), OCR Vision (:8013).</li>
+                <li data-i18n="proj.aichat.l6">Runtime tool discovery via <code>/tools/list</code>, building a live
+                  routing map per user with graceful degradation.</li>
+                <li data-i18n="proj.aichat.l7">Hard security blocks at the tool-node level to strictly control
+                  internet-search access.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 data-i18n="proj.aichat.h3">Hybrid Search &amp; RAG</h4>
+              <ul>
+                <li data-i18n="proj.aichat.l8"><b>Elasticsearch 8.x hybrid search</b>: dense KNN combined with BM25 in a
+                  single query.</li>
+                <li data-i18n="proj.aichat.l9">Ingestion supporting digital extraction + <b>OCR fallback</b> for scanned
+                  docs with adaptive DPI.</li>
+                <li data-i18n="proj.aichat.l10">Dual-write to Pinecone &amp; Elasticsearch with thread-level metadata
+                  filtering.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 data-i18n="proj.aichat.h4">Vision &amp; Hallucination Guardrails</h4>
+              <ul>
+                <li data-i18n="proj.aichat.l11"><b>GOT-OCR 2.0</b> on GPU containers with aggressive cleaners filtering
+                  repetition loops &amp; junk sequences.</li>
+                <li data-i18n="proj.aichat.l12"><b>BERTScore middleware</b>: scores Final Answers vs. observations,
+                  intercepting <code>F1 &lt; 0.15</code>.</li>
+                <li data-i18n="proj.aichat.l13"><b>SearXNG + Firecrawl</b> for multi-threaded scraping into clean
+                  Markdown via RabbitMQ queue.</li>
+              </ul>
+            </div>
+            <div style="grid-column:1 / -1">
+              <h4 data-i18n="proj.aichat.h5">Infrastructure &amp; Performance</h4>
+              <ul>
+                <li data-i18n="proj.aichat.l14"><b>4-bit NF4 + bfloat16</b> reduced VRAM ≈75% while preserving quality.
+                </li>
+                <li data-i18n="proj.aichat.l15">Dual-model architecture: <b>Mistral-7B</b> for generation +
+                  <b>LLaMA-3.2-1B</b> as a semantic content filter.
+                </li>
+                <li data-i18n="proj.aichat.l16">Full stack via Docker Compose, Nginx proxy, GPU pinning, and Arize
+                  Phoenix tracing.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Transformer research -->
+        <article class="card">
+          <span class="tag">RESEARCH</span>
+          <h3 data-i18n="proj.tr.title">Transformer Research &amp; Advanced Prompt Engineering</h3>
+          <div class="meta">2023 · Python · PyTorch · Transformers</div>
+          <ul>
+            <li data-i18n="proj.tr.l1">Deep-dived into Transformer internals (Self-Attention, Multi-Head Attention) to
+              understand failure modes.</li>
+            <li data-i18n="proj.tr.l2">Benchmarked CoT and Few-shot prompting; findings applied directly to AIchat's
+              ReAct system prompts.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="eyebrow" data-i18n="edu.eyebrow">Education</div>
+      <h2 data-i18n="edu.title">Education &amp; Achievements</h2>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 data-i18n="edu.school">B.Sc. Computer Science — National Economics University (NEU)</h3>
+          <div class="meta" data-i18n="edu.meta">Faculty of IT · CS-64 · 2022 – 2026 · Full-time</div>
+          <ul>
+            <li><b>GPA:</b> 3.32 / 4.0 &nbsp;·&nbsp; 8.01 / 10</li>
+            <li data-i18n="edu.l1"><b>Total credits earned:</b> 119</li>
+            <li data-i18n="edu.l2"><b>Conduct:</b> Excellent (Tốt)</li>
+            <li data-i18n="edu.l3"><b>Student ID:</b> 11220583</li>
+          </ul>
+
+          <h4 style="margin-top:18px" data-i18n="edu.hl">Selected high-grade courses</h4>
+          <div class="courses">
+            <div class="course"><span data-i18n="c.thesis">Graduation Thesis — CS</span><span class="grade aplus">9.80
+                A+</span></div>
+            <div class="course"><span data-i18n="c.aibiz">AI in Business &amp; Management</span><span
+                class="grade aplus">9.70 A+</span></div>
+            <div class="course"><span data-i18n="c.oop">Object-Oriented Programming</span><span class="grade aplus">9.50
+                A+</span></div>
+            <div class="course"><span data-i18n="c.proj">CS Capstone Project</span><span class="grade aplus">9.50
+                A+</span></div>
+            <div class="course"><span data-i18n="c.net">.NET Programming</span><span class="grade aplus">9.20 A+</span>
+            </div>
+            <div class="course"><span data-i18n="c.os">Operating Systems</span><span class="grade aplus">9.00 A+</span>
+            </div>
+            <div class="course"><span data-i18n="c.dbms">Database Management Systems</span><span
+                class="grade aplus">9.00 A+</span></div>
+            <div class="course"><span data-i18n="c.modern">Modern IT Technologies</span><span class="grade aplus">9.00
+                A+</span></div>
+            <div class="course"><span data-i18n="c.appdev">Application Programming</span><span class="grade a">8.90
+                A</span></div>
+            <div class="course"><span data-i18n="c.web">Web Design</span><span class="grade a">8.90 A</span></div>
+            <div class="course"><span data-i18n="c.unstr">Unstructured Data</span><span class="grade a">8.80 A</span>
+            </div>
+            <div class="course"><span data-i18n="c.webprog">Web Programming</span><span class="grade a">8.80 A</span>
+            </div>
+            <div class="course"><span data-i18n="c.network">Computer Networks</span><span class="grade a">8.70 A</span>
+            </div>
+            <div class="course"><span data-i18n="c.mobile">Mobile App Development</span><span class="grade a">8.50
+                A</span></div>
+            <div class="course"><span data-i18n="c.ml">Machine Learning</span><span class="grade bplus">8.40 B+</span>
+            </div>
+            <div class="course"><span data-i18n="c.java">Java Programming</span><span class="grade bplus">8.20 B+</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="ach.title">Achievements &amp; Languages</h3>
+          <ul>
+            <li data-i18n="ach.l1"><b>2nd Place</b> — AI Olympics 2025, NEU College of Technology (NCT)</li>
+            <li data-i18n="ach.l2"><b>English:</b> Advanced (technical reading/writing)</li>
+            <li data-i18n="ach.l3"><b>Vietnamese:</b> Native</li>
+          </ul>
+
+          <h4 style="margin-top:18px" data-i18n="exp.title">Work Experience</h4>
+          <div class="meta" data-i18n="exp.role">Marketing Collaborator — SEC English Center · 2023 – 2024</div>
+          <p style="color:var(--muted);font-size:14.5px;margin:6px 0 0" data-i18n="exp.body">
+            Executed digital marketing campaigns across social media, increasing brand awareness and student enrollment.
+          </p>
+
+          <h4 style="margin-top:18px" data-i18n="ref.title">References</h4>
+          <p style="color:var(--muted);font-size:14.5px;margin:6px 0 0" data-i18n="ref.body">
+            <b>Dr. Luu Minh Tuan</b> — Vice Dean, Faculty of IT, NEU<br>
+            Lmtneu@gmail.com · (+84) 904 143 460
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="eyebrow" data-i18n="contact.eyebrow">Contact</div>
+      <h2 data-i18n="contact.title">Let's build something.</h2>
+      <p class="lead" data-i18n="contact.body">
+        I'm open to AI engineering roles, research collaborations, and ambitious on-prem AI projects.
+        The fastest way to reach me is email.
+      </p>
+      <div class="hero-cta" style="margin-top:24px">
+        <a class="btn primary" href="mailto:discordhieuanh@gmail.com">discordhieuanh@gmail.com</a>
+        <a class="btn" href="tel:+84335511504">+84 335 511 504</a>
+        <a class="btn" href="CV_PhoHieuAnh_AI_ENGINEER.pdf" target="_blank" data-i18n="contact.cv">Download CV (PDF)</a>
+      </div>
+      <p style="margin-top:18px;color:var(--muted);font-size:14px" data-i18n="contact.addr">
+        📍 41 Pho Vong, Hai Ba Trung, Hanoi
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Pho Hieu Anh · <span data-i18n="footer.built">Built with vanilla HTML, CSS &amp;
+        JS</span></div>
+  </footer>
+
+  <script>
+    const dict = {
+      en: {
+        "nav.about": "About", "nav.skills": "Skills", "nav.server": "Server", "nav.projects": "Projects", "nav.edu": "Education", "nav.contact": "Contact",
+        "server.eyebrow": "Self-hosted infrastructure",
+        "server.title": "Server & Hardware Management",
+        "server.lead": "My entire multi-agent stack runs directly on a personal workstation — no EC2, no vendor lock-in. I administer every layer myself: OS, GPU drivers, container runtime, and observability, using WSL2 as a production-grade Linux environment on Windows.",
+        "server.rig": "Personal AI Rig — 24/7 Inference Node",
+        "server.ops": "Operations & Tuning",
+        "server.l1": "<b>VRAM budgeting on 16 GB:</b> 4-bit NF4 quantization + bfloat16 to fit Mistral-7B + LLaMA-3.2-1B + GOT-OCR concurrently.",
+        "server.l2": "<b>GPU pinning</b> via Docker <code>--gpus</code> & <code>CUDA_VISIBLE_DEVICES</code>; isolated per-service to prevent OOM cascades.",
+        "server.l3": "<b>WSL2 tuning:</b> custom <code>.wslconfig</code> (memory cap, swap, kernel args) + systemd enabled for clean Docker/Nginx services.",
+        "server.l4": "<b>NVIDIA Container Toolkit</b> bridging Windows driver → WSL2 → Docker, validated with <code>nvidia-smi</code> inside containers.",
+        "server.l5": "<b>Reverse proxy:</b> Nginx terminates traffic, routes to FastAPI / 3 MCP services / Phoenix UI on a private Docker network.",
+        "server.l6": "<b>Observability:</b> Arize Phoenix (OTEL) traces every ReAct step; Docker healthchecks + restart policies for unattended operation.",
+        "server.l7": "<b>Storage hygiene on 500 GB:</b> volume-mounted model cache, periodic prune of dangling images/layers, logs rotated.",
+        "hero.eyebrow": "AI Engineer · LLM Systems · Multi-Agent",
+        "hero.hi": "Hi, I'm",
+        "hero.lead": "Final-year Computer Science student building self-hosted, production-grade AI ecosystems — from LangGraph ReAct orchestration and Model Context Protocol microservices, to hybrid retrieval, GPU-accelerated OCR, and hallucination guardrails. Zero managed cloud AI required.",
+        "hero.loc": "Hanoi, Vietnam", "hero.edu": "NEU · Computer Science · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "2nd · AI Olympics 2025 (NCT)",
+        "hero.cta1": "View projects", "hero.cta2": "Get in touch", "hero.cta3": "Download CV",
+        "stat.containers": "Docker services", "stat.mcp": "MCP microservices", "stat.vram": "VRAM saved (NF4)", "stat.credits": "Credits earned",
+
+        "about.eyebrow": "About me", "about.title": "Translating AI research into shipping systems.",
+        "about.body": "I designed and implemented every layer of a multi-agent system from the ground up — agent orchestration, tool protocol, retrieval, vision, and observability. My strongest competency is taking cutting-edge research and turning it into containerized, deployment-ready infrastructure that runs entirely on private hardware.",
+
+        "skills.eyebrow": "Tech stack", "skills.title": "Technical skills",
+        "skills.agent": "Agent & Reasoning", "skills.llm": "LLM & Inference", "skills.rag": "RAG & Search",
+        "skills.cv": "Computer Vision / OCR", "skills.guard": "Quality & Guardrails", "skills.web": "Web Intelligence",
+        "skills.api": "Backend & API", "skills.db": "Databases & Caching", "skills.infra": "Infra & DevOps",
+
+        "proj.eyebrow": "Selected work", "proj.title": "Projects",
+        "proj.aichat.sub": "Self-Hosted Multi-Agent AI Ecosystem",
+        "proj.aichat.desc": "A Vietnamese-native, on-prem agentic RAG platform: a LangGraph ReAct loop driving Qwen2.5-7B across three Model Context Protocol microservices (Local Data, Web Agent, OCR Vision), with hybrid retrieval, GPU-accelerated OCR, and BERTScore hallucination middleware — wired together as a 12-container Docker Compose stack. No external LLM keys.",
+        "proj.aichat.h1": "Agent Orchestration (ReAct)",
+        "proj.aichat.h2": "MCP Architecture",
+        "proj.aichat.h3": "Hybrid Search & RAG",
+        "proj.aichat.h4": "Vision & Hallucination Guardrails",
+        "proj.aichat.h5": "Infrastructure & Performance",
+        "proj.aichat.l1": "<b>Multi-node LangGraph StateGraph</b> driving a full ReAct loop with structured output parsing.",
+        "proj.aichat.l2": "<b>3-layer loop prevention</b>: tool budget, exact-duplicate, and fuzzy duplicate (Unicode normalization + sorted word sets).",
+        "proj.aichat.l3": "<b>Auto web-search intent detection</b> with 35+ keyword patterns enabling zero-config search routing.",
+        "proj.aichat.l4": "Force-Final-Answer injection & server-side query sanitization protecting internal metadata.",
+        "proj.aichat.l5": "Decoupled reasoning from tool execution via 3 MCP services: Local Data (:8011), Web Agent (:8012), OCR Vision (:8013).",
+        "proj.aichat.l6": "Runtime tool discovery via <code>/tools/list</code>, building a live routing map per user with graceful degradation.",
+        "proj.aichat.l7": "Hard security blocks at the tool-node level to strictly control internet-search access.",
+        "proj.aichat.l8": "<b>Elasticsearch 8.x hybrid search</b>: dense KNN combined with BM25 in a single query.",
+        "proj.aichat.l9": "Ingestion supporting digital extraction + <b>OCR fallback</b> for scanned docs with adaptive DPI.",
+        "proj.aichat.l10": "Dual-write to Pinecone & Elasticsearch with thread-level metadata filtering.",
+        "proj.aichat.l11": "<b>GOT-OCR 2.0</b> on GPU containers with aggressive cleaners filtering repetition loops & junk sequences.",
+        "proj.aichat.l12": "<b>BERTScore middleware</b>: scores Final Answers vs. observations, intercepting <code>F1 < 0.15</code>.",
+        "proj.aichat.l13": "<b>SearXNG + Firecrawl</b> for multi-threaded scraping into clean Markdown via RabbitMQ queue.",
+        "proj.aichat.l14": "<b>4-bit NF4 + bfloat16</b> reduced VRAM ≈75% while preserving quality.",
+        "proj.aichat.l15": "Dual-model architecture: <b>Mistral-7B</b> for generation + <b>LLaMA-3.2-1B</b> as a semantic content filter.",
+        "proj.aichat.l16": "Full stack via Docker Compose, Nginx proxy, GPU pinning, and Arize Phoenix tracing.",
+        "proj.tr.title": "Transformer Research & Advanced Prompt Engineering",
+        "proj.tr.l1": "Deep-dived into Transformer internals (Self-Attention, Multi-Head Attention) to understand failure modes.",
+        "proj.tr.l2": "Benchmarked CoT and Few-shot prompting; findings applied directly to AIchat's ReAct system prompts.",
+
+        "edu.eyebrow": "Education", "edu.title": "Education & Achievements",
+        "edu.school": "B.Sc. Computer Science — National Economics University (NEU)",
+        "edu.meta": "Faculty of IT · CS-64 · 2022 – 2026 · Full-time",
+        "edu.l1": "<b>Total credits earned:</b> 119",
+        "edu.l2": "<b>Conduct:</b> Excellent (Tốt)",
+        "edu.l3": "<b>Student ID:</b> 11220583",
+        "edu.hl": "Selected high-grade courses",
+        "c.thesis": "Graduation Thesis — CS",
+        "c.aibiz": "AI in Business & Management",
+        "c.oop": "Object-Oriented Programming",
+        "c.proj": "CS Capstone Project",
+        "c.net": ".NET Programming",
+        "c.os": "Operating Systems",
+        "c.dbms": "Database Management Systems",
+        "c.modern": "Modern IT Technologies",
+        "c.appdev": "Application Programming",
+        "c.web": "Web Design",
+        "c.unstr": "Unstructured Data",
+        "c.webprog": "Web Programming",
+        "c.network": "Computer Networks",
+        "c.mobile": "Mobile App Development",
+        "c.ml": "Machine Learning",
+        "c.java": "Java Programming",
+
+        "ach.title": "Achievements & Languages",
+        "ach.l1": "<b>2nd Place</b> — AI Olympics 2025, NEU College of Technology (NCT)",
+        "ach.l2": "<b>English:</b> Advanced (technical reading/writing)",
+        "ach.l3": "<b>Vietnamese:</b> Native",
+        "exp.title": "Work Experience",
+        "exp.role": "Marketing Collaborator — SEC English Center · 2023 – 2024",
+        "exp.body": "Executed digital marketing campaigns across social media, increasing brand awareness and student enrollment.",
+        "ref.title": "References",
+        "ref.body": "<b>Dr. Luu Minh Tuan</b> — Vice Dean, Faculty of IT, NEU<br>Lmtneu@gmail.com · (+84) 904 143 460",
+
+        "contact.eyebrow": "Contact", "contact.title": "Let's build something.",
+        "contact.body": "I'm open to AI engineering roles, research collaborations, and ambitious on-prem AI projects. The fastest way to reach me is email.",
+        "contact.cv": "Download CV (PDF)", "contact.addr": "📍 41 Pho Vong, Hai Ba Trung, Hanoi",
+        "footer.built": "Built with vanilla HTML, CSS & JS",
+      },
+      vi: {
+        "nav.about": "Giới thiệu", "nav.skills": "Kỹ năng", "nav.server": "Server", "nav.projects": "Dự án", "nav.edu": "Học vấn", "nav.contact": "Liên hệ",
+        "server.eyebrow": "Hạ tầng tự host",
+        "server.title": "Quản lý Server & Phần cứng",
+        "server.lead": "Toàn bộ hệ thống multi-agent của tôi chạy trực tiếp trên một workstation cá nhân — không EC2, không vendor-lock. Tôi tự quản trị từ tầng OS, GPU driver, container runtime cho tới observability, dùng WSL2 làm môi trường Linux production-grade trên Windows.",
+        "server.rig": "Workstation AI Cá nhân — Node Inference 24/7",
+        "server.ops": "Vận hành & Tối ưu",
+        "server.l1": "<b>Cân đối VRAM 16 GB:</b> lượng tử hoá NF4 4-bit + bfloat16 để chạy đồng thời Mistral-7B + LLaMA-3.2-1B + GOT-OCR.",
+        "server.l2": "<b>Ghim GPU</b> qua Docker <code>--gpus</code> & <code>CUDA_VISIBLE_DEVICES</code>; cô lập từng service để tránh OOM lan dây chuyền.",
+        "server.l3": "<b>Tối ưu WSL2:</b> tuỳ chỉnh <code>.wslconfig</code> (giới hạn RAM, swap, kernel) + bật systemd để chạy Docker/Nginx như service.",
+        "server.l4": "<b>NVIDIA Container Toolkit</b> nối driver Windows → WSL2 → Docker, kiểm chứng bằng <code>nvidia-smi</code> trong container.",
+        "server.l5": "<b>Reverse proxy:</b> Nginx terminate request, route tới FastAPI / 3 MCP service / Phoenix UI trên Docker network nội bộ.",
+        "server.l6": "<b>Observability:</b> Arize Phoenix (OTEL) trace từng bước ReAct; healthcheck + restart policy của Docker đảm bảo chạy không cần trông coi.",
+        "server.l7": "<b>Quản lý ổ 500 GB:</b> mount volume cho cache model, prune định kỳ image/layer thừa, xoay vòng log.",
+        "hero.eyebrow": "Kỹ sư AI · Hệ thống LLM · Multi-Agent",
+        "hero.hi": "Xin chào, tôi là",
+        "hero.lead": "Sinh viên Khoa học Máy tính năm cuối, xây dựng các hệ thống AI tự host, đạt chuẩn production — từ điều phối LangGraph ReAct và microservices Model Context Protocol, đến tìm kiếm hybrid, OCR tăng tốc GPU và lớp chống hallucination. Hoàn toàn không cần dịch vụ AI cloud.",
+        "hero.loc": "Hà Nội, Việt Nam", "hero.edu": "NEU · Khoa học Máy tính · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "Giải Nhì · AI Olympics 2025 (NCT)",
+        "hero.cta1": "Xem dự án", "hero.cta2": "Liên hệ", "hero.cta3": "Tải CV",
+        "stat.containers": "Container Docker", "stat.mcp": "Microservices MCP", "stat.vram": "Tiết kiệm VRAM (NF4)", "stat.credits": "Tín chỉ tích luỹ",
+
+        "about.eyebrow": "Về tôi", "about.title": "Biến nghiên cứu AI thành sản phẩm chạy thật.",
+        "about.body": "Tôi tự thiết kế và triển khai mọi tầng của một hệ thống multi-agent — từ điều phối agent, giao thức công cụ, truy hồi, thị giác máy tính cho tới observability. Thế mạnh lớn nhất của tôi là biến những nghiên cứu AI mới nhất thành hạ tầng đã đóng container, sẵn sàng triển khai, chạy hoàn toàn trên hạ tầng riêng.",
+
+        "skills.eyebrow": "Bộ công nghệ", "skills.title": "Kỹ năng kỹ thuật",
+        "skills.agent": "Agent & Lập luận", "skills.llm": "LLM & Inference", "skills.rag": "RAG & Tìm kiếm",
+        "skills.cv": "Thị giác / OCR", "skills.guard": "Chất lượng & Guardrails", "skills.web": "Web Intelligence",
+        "skills.api": "Backend & API", "skills.db": "CSDL & Cache", "skills.infra": "Hạ tầng & DevOps",
+
+        "proj.eyebrow": "Một số sản phẩm", "proj.title": "Dự án",
+        "proj.aichat.sub": "Hệ sinh thái AI Multi-Agent Tự-Host",
+        "proj.aichat.desc": "Nền tảng RAG agentic chạy on-prem, hỗ trợ tiếng Việt: vòng lặp ReAct LangGraph điều khiển Qwen2.5-7B trên ba microservice Model Context Protocol (Local Data, Web Agent, OCR Vision), kết hợp truy hồi hybrid, OCR tăng tốc GPU và middleware chống hallucination bằng BERTScore — gói trong stack Docker Compose 12 container. Không dùng key LLM ngoài.",
+        "proj.aichat.h1": "Điều phối Agent (ReAct)",
+        "proj.aichat.h2": "Kiến trúc MCP",
+        "proj.aichat.h3": "Hybrid Search & RAG",
+        "proj.aichat.h4": "Thị giác & Guardrails chống hallucination",
+        "proj.aichat.h5": "Hạ tầng & Hiệu năng",
+        "proj.aichat.l1": "<b>StateGraph LangGraph đa-node</b> chạy trọn vòng ReAct với parser output có cấu trúc.",
+        "proj.aichat.l2": "<b>Chống lặp 3 lớp</b>: budget công cụ, trùng tuyệt đối và trùng mờ (chuẩn hoá Unicode + sắp xếp từ).",
+        "proj.aichat.l3": "<b>Tự nhận diện ý định web-search</b> qua hơn 35 mẫu keyword, định tuyến không cần cấu hình.",
+        "proj.aichat.l4": "Cưỡng bức Final-Answer & sanitize query phía server, bảo vệ metadata nội bộ.",
+        "proj.aichat.l5": "Tách reasoning khỏi tool qua 3 MCP service: Local Data (:8011), Web Agent (:8012), OCR Vision (:8013).",
+        "proj.aichat.l6": "Khám phá tool runtime qua <code>/tools/list</code>, dựng route map theo user với cơ chế degrade mềm.",
+        "proj.aichat.l7": "Chặn cứng quyền truy cập internet ở tầng tool-node để kiểm soát chặt chẽ.",
+        "proj.aichat.l8": "<b>Hybrid search Elasticsearch 8.x</b>: KNN dense + BM25 trong cùng một query.",
+        "proj.aichat.l9": "Pipeline ingest hỗ trợ trích xuất số + <b>fallback OCR</b> cho tài liệu scan với DPI thích ứng.",
+        "proj.aichat.l10": "Ghi song song Pinecone & Elasticsearch, lọc metadata theo thread.",
+        "proj.aichat.l11": "<b>GOT-OCR 2.0</b> trên container GPU, cleaner mạnh lọc vòng lặp & ký tự rác.",
+        "proj.aichat.l12": "<b>Middleware BERTScore</b>: chấm Final Answer so với observation, chặn <code>F1 < 0.15</code>.",
+        "proj.aichat.l13": "<b>SearXNG + Firecrawl</b> scrape đa luồng ra Markdown sạch qua hàng đợi RabbitMQ.",
+        "proj.aichat.l14": "<b>NF4 4-bit + bfloat16</b> giảm ~75% VRAM mà vẫn giữ chất lượng.",
+        "proj.aichat.l15": "Kiến trúc dual-model: <b>Mistral-7B</b> sinh + <b>LLaMA-3.2-1B</b> làm semantic filter.",
+        "proj.aichat.l16": "Full stack qua Docker Compose, Nginx proxy, ghim GPU, trace Arize Phoenix.",
+        "proj.tr.title": "Nghiên cứu Transformer & Prompt Engineering nâng cao",
+        "proj.tr.l1": "Đào sâu nội cấu Transformer (Self-Attention, Multi-Head Attention) để hiểu các chế độ thất bại.",
+        "proj.tr.l2": "Benchmark CoT và Few-shot prompting; áp dụng trực tiếp vào system prompt ReAct của AIchat.",
+
+        "edu.eyebrow": "Học vấn", "edu.title": "Học vấn & Thành tích",
+        "edu.school": "Cử nhân Khoa học Máy tính — Đại học Kinh tế Quốc dân (NEU)",
+        "edu.meta": "Khoa CNTT · Lớp KHMT-64 · 2022 – 2026 · Chính quy",
+        "edu.l1": "<b>Tổng tín chỉ tích luỹ:</b> 119",
+        "edu.l2": "<b>Rèn luyện:</b> Tốt",
+        "edu.l3": "<b>Mã sinh viên:</b> 11220583",
+        "edu.hl": "Một số môn điểm cao",
+        "c.thesis": "Khoá luận tốt nghiệp — KHMT",
+        "c.aibiz": "Ứng dụng AI trong Kinh doanh & Quản lý",
+        "c.oop": "Lập trình Hướng đối tượng",
+        "c.proj": "Đề án — Khoa học máy tính",
+        "c.net": "Lập trình .NET",
+        "c.os": "Hệ điều hành",
+        "c.dbms": "Hệ Quản trị Cơ sở Dữ liệu",
+        "c.modern": "Các Công nghệ Hiện đại trong CNTT",
+        "c.appdev": "Lập trình Ứng dụng",
+        "c.web": "Thiết kế Web",
+        "c.unstr": "Dữ liệu Phi cấu trúc",
+        "c.webprog": "Lập trình Web",
+        "c.network": "Mạng máy tính & Truyền số liệu",
+        "c.mobile": "Phát triển Ứng dụng Di động",
+        "c.ml": "Học máy",
+        "c.java": "Lập trình Java",
+
+        "ach.title": "Thành tích & Ngôn ngữ",
+        "ach.l1": "<b>Giải Nhì</b> — AI Olympics 2025, Khoa Công nghệ NEU (NCT)",
+        "ach.l2": "<b>Tiếng Anh:</b> Nâng cao (đọc/viết kỹ thuật)",
+        "ach.l3": "<b>Tiếng Việt:</b> Bản ngữ",
+        "exp.title": "Kinh nghiệm làm việc",
+        "exp.role": "Cộng tác viên Marketing — Trung tâm Anh ngữ SEC · 2023 – 2024",
+        "exp.body": "Triển khai các chiến dịch digital marketing trên mạng xã hội, tăng nhận diện thương hiệu và số lượng học viên đăng ký.",
+        "ref.title": "Người tham chiếu",
+        "ref.body": "<b>TS. Lưu Minh Tuấn</b> — Phó Trưởng khoa CNTT, NEU<br>Lmtneu@gmail.com · (+84) 904 143 460",
+
+        "contact.eyebrow": "Liên hệ", "contact.title": "Cùng xây thứ gì đó nhé.",
+        "contact.body": "Tôi sẵn sàng cho các vị trí AI engineer, hợp tác nghiên cứu và các dự án AI on-prem tham vọng. Cách nhanh nhất để liên hệ là email.",
+        "contact.cv": "Tải CV (PDF)", "contact.addr": "📍 41 Phố Vọng, Hai Bà Trưng, Hà Nội",
+        "footer.built": "Xây bằng HTML, CSS & JS thuần",
+      }
+    };
+
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        const v = dict[lang] && dict[lang][k];
+        if (v !== undefined) el.innerHTML = v;
+      });
+      document.querySelectorAll('.lang-toggle button').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+      localStorage.setItem('lang', lang);
+    }
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.addEventListener('click', () => applyLang(b.dataset.lang));
+    });
+
+    const themeBtn = document.getElementById('themeBtn');
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    applyLang(localStorage.getItem('lang') || 'en');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</body>
+
+</html>
