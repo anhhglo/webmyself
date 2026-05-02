@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pho Hieu Anh — AI Engineer</title>
+  <title>Do Pho Hieu Anh — AI Engineer</title>
+  <link rel="icon" type="image/png" href="avatar.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -508,7 +509,7 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <div class="brand"><span class="brand-dot"></span><span>Pho Hieu Anh</span></div>
+      <div class="brand"><span class="brand-dot"></span><span data-i18n="hero.name">Do Pho Hieu Anh</span></div>
       <nav class="nav-links">
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
@@ -534,7 +535,7 @@
       <div class="eyebrow" data-i18n="hero.eyebrow">AI Engineer · LLM Systems · Multi-Agent</div>
       <h1>
         <span data-i18n="hero.hi">Hi, I'm</span>
-        <span class="grad">Pho Hieu Anh</span>.
+        <span class="grad" data-i18n="hero.name">Do Pho Hieu Anh</span>.
       </h1>
       <p class="lead" data-i18n="hero.lead">
         Final-year Computer Science student building self-hosted, production-grade AI ecosystems —
@@ -543,6 +544,7 @@
       </p>
       <div class="hero-meta">
         <span>📍 <span data-i18n="hero.loc">Hanoi, Vietnam</span></span>
+        <span>🎂 <span data-i18n="hero.dob">Born 11 May 2004</span></span>
         <span>🎓 <span data-i18n="hero.edu">NEU · Computer Science · 2022–2026</span></span>
         <span>📊 <span data-i18n="hero.gpa">GPA 3.32 / 4.0</span></span>
         <span>🏆 <span data-i18n="hero.award">2nd · AI Olympics 2025 (NCT)</span></span>
@@ -696,7 +698,8 @@
             <li data-i18n="server.l1"><b>VRAM budgeting on 16 GB:</b> 4-bit NF4 quantization + bfloat16 to fit
               Mistral-7B + LLaMA-3.2-1B + GOT-OCR concurrently.</li>
             <li data-i18n="server.l2"><b>GPU pinning</b> via Docker <code>--gpus</code> &amp;
-              <code>CUDA_VISIBLE_DEVICES</code>; isolated per-service to prevent OOM cascades.</li>
+              <code>CUDA_VISIBLE_DEVICES</code>; isolated per-service to prevent OOM cascades.
+            </li>
             <li data-i18n="server.l3"><b>WSL2 tuning:</b> custom <code>.wslconfig</code> (memory cap, swap, kernel args)
               + systemd enabled for clean Docker/Nginx services.</li>
             <li data-i18n="server.l4"><b>NVIDIA Container Toolkit</b> bridging Windows driver → WSL2 → Docker, validated
@@ -725,8 +728,10 @@
           <h3>AIchat — <span data-i18n="proj.aichat.sub">Self-Hosted Multi-Agent AI Ecosystem</span></h3>
           <div class="meta">2024 – 2025 · Python · LangGraph · MCP · Docker · CUDA</div>
           <div style="margin:10px 0 4px;display:flex;gap:8px;flex-wrap:wrap">
-            <a class="btn primary" href="https://github.com/anhhglo/AIchat" target="_blank" style="font-size:12px;padding:6px 12px">⭐ GitHub</a>
-            <a class="btn" href="#contact" data-i18n="proj.aichat.demo" style="font-size:12px;padding:6px 12px">🖥️ Request Demo</a>
+            <a class="btn primary" href="https://github.com/anhhglo/AIchat" target="_blank"
+              style="font-size:12px;padding:6px 12px">⭐ GitHub</a>
+            <a class="btn" href="#contact" data-i18n="proj.aichat.demo" style="font-size:12px;padding:6px 12px">🖥️
+              Request Demo</a>
           </div>
           <p data-i18n="proj.aichat.desc">
             A Vietnamese-native, on-prem agentic RAG platform: a LangGraph ReAct loop driving Qwen2.5-7B
@@ -810,35 +815,43 @@
         </article>
 
         <!-- ROADMAP -->
-        <article class="card" style="border-color:rgba(124,92,255,.3);background:linear-gradient(180deg,rgba(124,92,255,.06),rgba(124,92,255,.02))">
-          <span class="tag" style="color:var(--accent);background:rgba(124,92,255,.1)" data-i18n="proj.road.tag">ROADMAP</span>
+        <article class="card"
+          style="border-color:rgba(124,92,255,.3);background:linear-gradient(180deg,rgba(124,92,255,.06),rgba(124,92,255,.02))">
+          <span class="tag" style="color:var(--accent);background:rgba(124,92,255,.1)"
+            data-i18n="proj.road.tag">ROADMAP</span>
           <h3 data-i18n="proj.road.title">Upcoming AI Products</h3>
-          <p style="color:var(--muted);font-size:14.5px;margin:0 0 18px" data-i18n="proj.road.desc">A pipeline of AI-native products in active design — each solving a real problem with on-prem or edge AI.</p>
+          <p style="color:var(--muted);font-size:14.5px;margin:0 0 18px" data-i18n="proj.road.desc">A pipeline of
+            AI-native products in active design — each solving a real problem with on-prem or edge AI.</p>
           <div class="grid grid-3" style="gap:12px">
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px">
               <div style="font-size:20px;margin-bottom:6px">📵</div>
               <div style="font-weight:600;font-size:14px" data-i18n="proj.road.p1">AI Child-Safe Phones</div>
-              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p1d">On-device content filtering & screen-time AI for kids</div>
+              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p1d">On-device content
+                filtering & screen-time AI for kids</div>
             </div>
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px">
               <div style="font-size:20px;margin-bottom:6px">🆘</div>
               <div style="font-weight:600;font-size:14px" data-i18n="proj.road.p2">AI SOS</div>
-              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p2d">Emergency detection & auto-alert system using edge AI</div>
+              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p2d">Emergency
+                detection & auto-alert system using edge AI</div>
             </div>
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px">
               <div style="font-size:20px;margin-bottom:6px">📈</div>
               <div style="font-weight:600;font-size:14px" data-i18n="proj.road.p3">AI Sales & Marketing</div>
-              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p3d">Agentic campaign builder & lead intelligence platform</div>
+              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p3d">Agentic campaign
+                builder & lead intelligence platform</div>
             </div>
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px">
               <div style="font-size:20px;margin-bottom:6px">📚</div>
               <div style="font-weight:600;font-size:14px" data-i18n="proj.road.p4">AI Book</div>
-              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p4d">AI-assisted authoring & interactive reading experience</div>
+              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p4d">AI-assisted
+                authoring & interactive reading experience</div>
             </div>
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px">
               <div style="font-size:20px;margin-bottom:6px">🗣️</div>
               <div style="font-weight:600;font-size:14px" data-i18n="proj.road.p5">AI English</div>
-              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p5d">Adaptive English tutor with pronunciation & grammar AI</div>
+              <div style="color:var(--muted);font-size:12px;margin-top:4px" data-i18n="proj.road.p5d">Adaptive English
+                tutor with pronunciation & grammar AI</div>
             </div>
           </div>
         </article>
@@ -909,9 +922,11 @@
           <h4 style="margin-top:18px" data-i18n="exp.title">Work Experience</h4>
           <div class="meta" data-i18n="exp.role2">IT Staff — Công ty TNHH MH Rental · 2025 – Present</div>
           <p style="color:var(--muted);font-size:14.5px;margin:6px 0 0" data-i18n="exp.body2">
-            Managing internal IT infrastructure, network systems, and deploying AI-powered tools for operational efficiency.
+            Managing internal IT infrastructure, network systems, and deploying AI-powered tools for operational
+            efficiency.
           </p>
-          <div class="meta" style="margin-top:12px" data-i18n="exp.role">Marketing Collaborator — SEC English Center · 2023 – 2024</div>
+          <div class="meta" style="margin-top:12px" data-i18n="exp.role">Marketing Collaborator — SEC English Center ·
+            2023 – 2024</div>
           <p style="color:var(--muted);font-size:14.5px;margin:6px 0 0" data-i18n="exp.body">
             Executed digital marketing campaigns across social media, increasing brand awareness and student enrollment.
           </p>
@@ -947,7 +962,7 @@
   </main>
 
   <footer>
-    <div>© <span id="year"></span> Pho Hieu Anh · <span data-i18n="footer.built">Built with vanilla HTML, CSS &amp;
+    <div>© <span id="year"></span> Do Pho Hieu Anh · <span data-i18n="footer.built">Built with vanilla HTML, CSS &amp;
         JS</span></div>
   </footer>
 
@@ -969,6 +984,8 @@
         "server.l7": "<b>Storage hygiene on 500 GB:</b> volume-mounted model cache, periodic prune of dangling images/layers, logs rotated.",
         "hero.eyebrow": "AI Engineer · LLM Systems · Multi-Agent",
         "hero.hi": "Hi, I'm",
+        "hero.name": "Do Pho Hieu Anh",
+        "hero.dob": "Born 11 May 2004",
         "hero.lead": "Final-year Computer Science student building self-hosted, production-grade AI ecosystems — from LangGraph ReAct orchestration and Model Context Protocol microservices, to hybrid retrieval, GPU-accelerated OCR, and hallucination guardrails. Zero managed cloud AI required.",
         "hero.loc": "Hanoi, Vietnam", "hero.edu": "NEU · Computer Science · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "2nd · AI Olympics 2025 (NCT)",
         "hero.cta1": "View projects", "hero.cta2": "Get in touch", "hero.cta3": "Download CV",
@@ -1039,7 +1056,7 @@
         "ach.l2": "<b>English:</b> Advanced (technical reading/writing)",
         "ach.l3": "<b>Vietnamese:</b> Native",
         "exp.title": "Work Experience",
-        "exp.role2": "IT Staff — Công ty TNHH MH Rental · 2025 – Present",
+        "exp.role2": "IT Staff — MH Rental Company (TNHH MH Rental) · 2025 – Present",
         "exp.body2": "Managing internal IT infrastructure, network systems, and deploying AI-powered tools for operational efficiency.",
         "exp.role": "Marketing Collaborator — SEC English Center · 2023 – 2024",
         "exp.body": "Executed digital marketing campaigns across social media, increasing brand awareness and student enrollment.",
@@ -1081,6 +1098,8 @@
         "server.l7": "<b>Quản lý ổ 500 GB:</b> mount volume cho cache model, prune định kỳ image/layer thừa, xoay vòng log.",
         "hero.eyebrow": "Kỹ sư AI · Hệ thống LLM · Multi-Agent",
         "hero.hi": "Xin chào, tôi là",
+        "hero.name": "Đỗ Phó Hiếu Anh",
+        "hero.dob": "Sinh ngày 11/05/2004",
         "hero.lead": "Sinh viên Khoa học Máy tính năm cuối, xây dựng các hệ thống AI tự host, đạt chuẩn production — từ điều phối LangGraph ReAct và microservices Model Context Protocol, đến tìm kiếm hybrid, OCR tăng tốc GPU và lớp chống hallucination. Hoàn toàn không cần dịch vụ AI cloud.",
         "hero.loc": "Hà Nội, Việt Nam", "hero.edu": "NEU · Khoa học Máy tính · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "Giải Nhì · AI Olympics 2025 (NCT)",
         "hero.cta1": "Xem dự án", "hero.cta2": "Liên hệ", "hero.cta3": "Tải CV",
