@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Do Pho Hieu Anh — AI Engineer</title>
-  <link rel="icon" type="image/png" href="avatar.png">
+  <link rel="icon" type="image/jpeg" href="avatar.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -422,6 +422,15 @@
     @media(max-width:680px) {
       .stats {
         grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:900px) {
+      #contact > div[style*="grid-template-columns:200px"] {
+        grid-template-columns: 1fr !important
+      }
+      #contact aside {
+        position: static !important
       }
     }
 
@@ -942,21 +951,46 @@
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="eyebrow" data-i18n="contact.eyebrow">Contact</div>
-      <h2 data-i18n="contact.title">Let's build something.</h2>
-      <p class="lead" data-i18n="contact.body">
-        I'm open to AI engineering roles, research collaborations, and ambitious on-prem AI projects.
-        The fastest way to reach me is email.
-      </p>
-      <div class="hero-cta" style="margin-top:24px">
-        <a class="btn primary" href="mailto:discordhieuanh@gmail.com">discordhieuanh@gmail.com</a>
-        <a class="btn" href="tel:+84335511504">+84 335 511 504</a>
-        <a class="btn" href="https://www.linkedin.com/in/anh-hieu-aineu/" target="_blank">LinkedIn</a>
-        <a class="btn" href="CV_PhoHieuAnh_AI_ENGINEER.pdf" target="_blank" data-i18n="contact.cv">Download CV (PDF)</a>
+      <div style="display:grid;grid-template-columns:200px 1fr 200px;gap:20px;align-items:start">
+
+        <!-- AD LEFT: Web Services -->
+        <aside style="background:linear-gradient(160deg,rgba(34,211,238,.08),rgba(34,211,238,.02));border:1px dashed rgba(34,211,238,.25);border-radius:16px;padding:18px;text-align:center;position:sticky;top:90px">
+          <div style="font-size:28px;margin-bottom:8px">🌐</div>
+          <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);font-weight:700;margin-bottom:8px" data-i18n="adv.web.tag">Web Services</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px" data-i18n="adv.web.title">Need a website?</div>
+          <p style="font-size:11.5px;color:var(--muted);margin:0 0 12px" data-i18n="adv.web.body">Custom portfolio, landing page or SaaS — built fast, hosted on your own machine.</p>
+          <a href="mailto:discordhieuanh@gmail.com?subject=Web Service Inquiry" class="btn primary" style="font-size:11px;padding:6px 10px;width:100%;text-align:center;display:block" data-i18n="adv.cta">Get in touch</a>
+        </aside>
+
+        <!-- CONTACT MAIN -->
+        <div>
+          <div class="eyebrow" data-i18n="contact.eyebrow">Contact</div>
+          <h2 data-i18n="contact.title">Let's build something.</h2>
+          <p class="lead" data-i18n="contact.body">
+            I'm open to AI engineering roles, research collaborations, and ambitious on-prem AI projects.
+            The fastest way to reach me is email.
+          </p>
+          <div class="hero-cta" style="margin-top:24px">
+            <a class="btn primary" href="mailto:discordhieuanh@gmail.com">discordhieuanh@gmail.com</a>
+            <a class="btn" href="tel:+84335511504">+84 335 511 504</a>
+            <a class="btn" href="https://www.linkedin.com/in/anh-hieu-aineu/" target="_blank">LinkedIn</a>
+            <a class="btn" href="CV_PhoHieuAnh_AI_ENGINEER.pdf" target="_blank" data-i18n="contact.cv">Download CV (PDF)</a>
+          </div>
+          <p style="margin-top:18px;color:var(--muted);font-size:14px" data-i18n="contact.addr">
+            📍 41 Pho Vong, Hai Ba Trung, Hanoi
+          </p>
+        </div>
+
+        <!-- AD RIGHT: Server / AI Infra -->
+        <aside style="background:linear-gradient(160deg,rgba(124,92,255,.08),rgba(124,92,255,.02));border:1px dashed rgba(124,92,255,.25);border-radius:16px;padding:18px;text-align:center;position:sticky;top:90px">
+          <div style="font-size:28px;margin-bottom:8px">🖥️</div>
+          <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px" data-i18n="adv.srv.tag">Self-Hosted AI</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px" data-i18n="adv.srv.title">Run AI on your server</div>
+          <p style="font-size:11.5px;color:var(--muted);margin:0 0 12px" data-i18n="adv.srv.body">Deploy private LLMs, RAG pipelines & MCP services on your own hardware. No cloud costs.</p>
+          <a href="mailto:discordhieuanh@gmail.com?subject=Server AI Inquiry" class="btn" style="font-size:11px;padding:6px 10px;width:100%;text-align:center;display:block;border-color:var(--accent)" data-i18n="adv.cta">Get in touch</a>
+        </aside>
+
       </div>
-      <p style="margin-top:18px;color:var(--muted);font-size:14px" data-i18n="contact.addr">
-        📍 41 Pho Vong, Hai Ba Trung, Hanoi
-      </p>
     </section>
 
   </main>
@@ -1077,6 +1111,11 @@
         "ref.title": "References",
         "ref.body": "<b>Dr. Luu Minh Tuan</b> — Vice Dean, Faculty of IT, NEU<br>Lmtneu@gmail.com · (+84) 904 143 460",
 
+        "adv.web.tag": "Web Services", "adv.web.title": "Need a website?",
+        "adv.web.body": "Custom portfolio, landing page or SaaS — built fast, hosted on your own machine.",
+        "adv.srv.tag": "Self-Hosted AI", "adv.srv.title": "Run AI on your server",
+        "adv.srv.body": "Deploy private LLMs, RAG pipelines & MCP services on your own hardware. No cloud costs.",
+        "adv.cta": "Get in touch",
         "contact.eyebrow": "Contact", "contact.title": "Let's build something.",
         "contact.body": "I'm open to AI engineering roles, research collaborations, and ambitious on-prem AI projects. The fastest way to reach me is email.",
         "contact.cv": "Download CV (PDF)", "contact.addr": "📍 41 Pho Vong, Hai Ba Trung, Hanoi",
@@ -1191,6 +1230,11 @@
         "ref.title": "Người tham chiếu",
         "ref.body": "<b>TS. Lưu Minh Tuấn</b> — Phó Trưởng khoa CNTT, NEU<br>Lmtneu@gmail.com · (+84) 904 143 460",
 
+        "adv.web.tag": "Dịch vụ Web", "adv.web.title": "Cần website?",
+        "adv.web.body": "Portfolio, landing page hoặc SaaS theo yêu cầu — làm nhanh, host trên máy của bạn.",
+        "adv.srv.tag": "AI Tự Host", "adv.srv.title": "Chạy AI trên server của bạn",
+        "adv.srv.body": "Triển khai LLM riêng, RAG pipeline & MCP service trên phần cứng của bạn. Không tốn cloud.",
+        "adv.cta": "Liên hệ ngay",
         "contact.eyebrow": "Liên hệ", "contact.title": "Cùng xây thứ gì đó nhé.",
         "contact.body": "Tôi sẵn sàng cho các vị trí AI engineer, hợp tác nghiên cứu và các dự án AI on-prem tham vọng. Cách nhanh nhất để liên hệ là email.",
         "contact.cv": "Tải CV (PDF)", "contact.addr": "📍 41 Phố Vọng, Hai Bà Trưng, Hà Nội",
