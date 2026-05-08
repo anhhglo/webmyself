@@ -678,48 +678,48 @@
 
     <!-- AI TOOLS & IDEs -->
     <section id="tools">
-      <div class="eyebrow">AI workflow</div>
-      <h2>AI Tools &amp; IDEs I Use Daily</h2>
-      <p class="lead" style="margin-top:8px">
-        Bộ công cụ AI và IDE tôi sử dụng hằng ngày để nghiên cứu, code, và vận hành mô hình — phối hợp giữa các agent CLI, runtime LLM cục bộ, công cụ tra cứu/tổng hợp và môi trường phát triển đa nền tảng.
+      <div class="eyebrow" data-i18n="tools.eyebrow">AI workflow</div>
+      <h2 data-i18n="tools.title">AI Tools &amp; IDEs I Use Daily</h2>
+      <p class="lead" style="margin-top:8px" data-i18n="tools.lead">
+        The AI toolchain and IDEs I use every day for research, coding, and model ops — combining CLI coding agents, local LLM runtimes, knowledge tools, and cross-platform development environments.
       </p>
 
       <div class="grid grid-2" style="margin-top:20px;gap:16px">
         <article class="card">
-          <span class="tag">AGENT CLI</span>
-          <h3>Coding Agents</h3>
+          <span class="tag" data-i18n="tools.t1.tag">AGENT CLI</span>
+          <h3 data-i18n="tools.t1.title">Coding Agents</h3>
           <ul>
-            <li><b>Claude Code</b> — CLI agent chính thức của Anthropic, dùng để refactor, sinh code, và điều phối tác vụ đa file ngay trong terminal.</li>
-            <li><b>OpenClaw</b> — Agent CLI mã nguồn mở thay thế cho Claude Code, dùng cho các pipeline tự động hoá local.</li>
-            <li><b>Cline + Local LLM Coder</b> — Cline (VS Code) ghép với mô hình code chạy local (Qwen-Coder / DeepSeek-Coder qua Ollama) để code offline, không phụ thuộc cloud.</li>
+            <li data-i18n="tools.t1.l1"><b>Claude Code</b> — Anthropic's official agentic CLI for refactoring, code generation, and orchestrating multi-file tasks directly in the terminal.</li>
+            <li data-i18n="tools.t1.l2"><b>OpenClaw</b> — Open-source CLI agent used as an alternative to Claude Code for local automation pipelines.</li>
+            <li data-i18n="tools.t1.l3"><b>Cline + Local LLM Coder</b> — Cline (VS Code) paired with a local code model (Qwen-Coder / DeepSeek-Coder via Ollama) for fully offline coding with no cloud dependency.</li>
           </ul>
         </article>
 
         <article class="card">
-          <span class="tag">LOCAL LLM</span>
-          <h3>Local Model Runtimes</h3>
+          <span class="tag" data-i18n="tools.t2.tag">LOCAL LLM</span>
+          <h3 data-i18n="tools.t2.title">Local Model Runtimes</h3>
           <ul>
-            <li><b>Ollama</b> — Runtime LLM cục bộ, dùng pull/serve các model 7B–14B (Qwen, Llama, Mistral) qua REST API trên RTX 5080.</li>
-            <li><b>LM Studio</b> — GUI chạy GGUF model offline, dùng để benchmark và thử prompt nhanh trước khi đưa vào pipeline production.</li>
+            <li data-i18n="tools.t2.l1"><b>Ollama</b> — Local LLM runtime; pulls and serves 7B–14B models (Qwen, Llama, Mistral) over a REST API on the RTX 5080.</li>
+            <li data-i18n="tools.t2.l2"><b>LM Studio</b> — Desktop GUI for running GGUF models offline; used for quick benchmarks and prompt iteration before promoting to the production pipeline.</li>
           </ul>
         </article>
 
         <article class="card">
-          <span class="tag">RESEARCH</span>
-          <h3>Knowledge &amp; Research</h3>
+          <span class="tag" data-i18n="tools.t3.tag">RESEARCH</span>
+          <h3 data-i18n="tools.t3.title">Knowledge &amp; Research</h3>
           <ul>
-            <li><b>Perplexity</b> — Công cụ tra cứu AI có trích dẫn nguồn, dùng để khảo sát nhanh paper, framework, và best practice mới.</li>
-            <li><b>NotebookLM</b> — Của Google, dùng để tổng hợp tài liệu nội bộ (PDF, slide) thành brief có nguồn để onboard kiến thức nhanh.</li>
+            <li data-i18n="tools.t3.l1"><b>Perplexity</b> — Cited-source AI search; used for rapid surveys of new papers, frameworks, and best practices.</li>
+            <li data-i18n="tools.t3.l2"><b>NotebookLM</b> — Google's grounded notebook; condenses internal docs (PDFs, slides) into source-cited briefs for fast onboarding.</li>
           </ul>
         </article>
 
         <article class="card">
-          <span class="tag">IDE</span>
-          <h3>Development Environments</h3>
+          <span class="tag" data-i18n="tools.t4.tag">IDE</span>
+          <h3 data-i18n="tools.t4.title">Development Environments</h3>
           <ul>
-            <li><b>VS Code</b> — IDE chính cho Python/TypeScript/Docker, tích hợp Cline, Copilot và remote-WSL.</li>
-            <li><b>Antigravity IDE</b> — IDE agentic của Google, thử nghiệm cho workflow đa-agent trên cùng một codebase.</li>
-            <li><b>Android Studio</b> — Phát triển và debug ứng dụng Android, đặc biệt cho các sản phẩm AI on-device trong roadmap.</li>
+            <li data-i18n="tools.t4.l1"><b>VS Code</b> — Primary IDE for Python / TypeScript / Docker, integrated with Cline, Copilot, and remote-WSL.</li>
+            <li data-i18n="tools.t4.l2"><b>Antigravity IDE</b> — Google's agentic IDE; experimented with for multi-agent workflows on the same codebase.</li>
+            <li data-i18n="tools.t4.l3"><b>Android Studio</b> — Building and debugging Android apps, especially for the on-device AI products on my roadmap.</li>
           </ul>
         </article>
       </div>
@@ -1169,6 +1169,24 @@
         "contact.body": "I'm open to AI engineering roles, research collaborations, and ambitious on-prem AI projects. The fastest way to reach me is email.",
         "contact.cv": "Download CV (PDF)", "contact.addr": "📍 41 Pho Vong, Hai Ba Trung, Hanoi",
         "footer.built": "Built with vanilla HTML, CSS & JS",
+
+        "tools.eyebrow": "AI workflow",
+        "tools.title": "AI Tools & IDEs I Use Daily",
+        "tools.lead": "The AI toolchain and IDEs I use every day for research, coding, and model ops — combining CLI coding agents, local LLM runtimes, knowledge tools, and cross-platform development environments.",
+        "tools.t1.tag": "AGENT CLI", "tools.t1.title": "Coding Agents",
+        "tools.t1.l1": "<b>Claude Code</b> — Anthropic's official agentic CLI for refactoring, code generation, and orchestrating multi-file tasks directly in the terminal.",
+        "tools.t1.l2": "<b>OpenClaw</b> — Open-source CLI agent used as an alternative to Claude Code for local automation pipelines.",
+        "tools.t1.l3": "<b>Cline + Local LLM Coder</b> — Cline (VS Code) paired with a local code model (Qwen-Coder / DeepSeek-Coder via Ollama) for fully offline coding with no cloud dependency.",
+        "tools.t2.tag": "LOCAL LLM", "tools.t2.title": "Local Model Runtimes",
+        "tools.t2.l1": "<b>Ollama</b> — Local LLM runtime; pulls and serves 7B–14B models (Qwen, Llama, Mistral) over a REST API on the RTX 5080.",
+        "tools.t2.l2": "<b>LM Studio</b> — Desktop GUI for running GGUF models offline; used for quick benchmarks and prompt iteration before promoting to the production pipeline.",
+        "tools.t3.tag": "RESEARCH", "tools.t3.title": "Knowledge & Research",
+        "tools.t3.l1": "<b>Perplexity</b> — Cited-source AI search; used for rapid surveys of new papers, frameworks, and best practices.",
+        "tools.t3.l2": "<b>NotebookLM</b> — Google's grounded notebook; condenses internal docs (PDFs, slides) into source-cited briefs for fast onboarding.",
+        "tools.t4.tag": "IDE", "tools.t4.title": "Development Environments",
+        "tools.t4.l1": "<b>VS Code</b> — Primary IDE for Python / TypeScript / Docker, integrated with Cline, Copilot, and remote-WSL.",
+        "tools.t4.l2": "<b>Antigravity IDE</b> — Google's agentic IDE; experimented with for multi-agent workflows on the same codebase.",
+        "tools.t4.l3": "<b>Android Studio</b> — Building and debugging Android apps, especially for the on-device AI products on my roadmap.",
       },
       vi: {
         "nav.about": "Giới thiệu", "nav.skills": "Kỹ năng", "nav.server": "Server", "nav.projects": "Dự án", "nav.edu": "Học vấn", "nav.contact": "Liên hệ",
@@ -1288,6 +1306,24 @@
         "contact.body": "Tôi sẵn sàng cho các vị trí AI engineer, hợp tác nghiên cứu và các dự án AI on-prem tham vọng. Cách nhanh nhất để liên hệ là email.",
         "contact.cv": "Tải CV (PDF)", "contact.addr": "📍 41 Phố Vọng, Hai Bà Trưng, Hà Nội",
         "footer.built": "Xây bằng HTML, CSS & JS thuần",
+
+        "tools.eyebrow": "Workflow AI",
+        "tools.title": "Bộ công cụ AI & IDE tôi dùng hằng ngày",
+        "tools.lead": "Bộ công cụ AI và IDE tôi sử dụng hằng ngày để nghiên cứu, code, và vận hành mô hình — phối hợp giữa các agent CLI, runtime LLM cục bộ, công cụ tra cứu/tổng hợp và môi trường phát triển đa nền tảng.",
+        "tools.t1.tag": "AGENT CLI", "tools.t1.title": "Coding Agents",
+        "tools.t1.l1": "<b>Claude Code</b> — CLI agent chính thức của Anthropic, dùng để refactor, sinh code, và điều phối tác vụ đa file ngay trong terminal.",
+        "tools.t1.l2": "<b>OpenClaw</b> — Agent CLI mã nguồn mở thay thế cho Claude Code, dùng cho các pipeline tự động hoá local.",
+        "tools.t1.l3": "<b>Cline + Local LLM Coder</b> — Cline (VS Code) ghép với mô hình code chạy local (Qwen-Coder / DeepSeek-Coder qua Ollama) để code offline, không phụ thuộc cloud.",
+        "tools.t2.tag": "LOCAL LLM", "tools.t2.title": "Runtime Mô hình Cục bộ",
+        "tools.t2.l1": "<b>Ollama</b> — Runtime LLM cục bộ, dùng pull/serve các model 7B–14B (Qwen, Llama, Mistral) qua REST API trên RTX 5080.",
+        "tools.t2.l2": "<b>LM Studio</b> — GUI chạy GGUF model offline, dùng để benchmark và thử prompt nhanh trước khi đưa vào pipeline production.",
+        "tools.t3.tag": "RESEARCH", "tools.t3.title": "Tra cứu & Nghiên cứu",
+        "tools.t3.l1": "<b>Perplexity</b> — Công cụ tra cứu AI có trích dẫn nguồn, dùng để khảo sát nhanh paper, framework, và best practice mới.",
+        "tools.t3.l2": "<b>NotebookLM</b> — Của Google, dùng để tổng hợp tài liệu nội bộ (PDF, slide) thành brief có nguồn để onboard kiến thức nhanh.",
+        "tools.t4.tag": "IDE", "tools.t4.title": "Môi trường Phát triển",
+        "tools.t4.l1": "<b>VS Code</b> — IDE chính cho Python/TypeScript/Docker, tích hợp Cline, Copilot và remote-WSL.",
+        "tools.t4.l2": "<b>Antigravity IDE</b> — IDE agentic của Google, thử nghiệm cho workflow đa-agent trên cùng một codebase.",
+        "tools.t4.l3": "<b>Android Studio</b> — Phát triển và debug ứng dụng Android, đặc biệt cho các sản phẩm AI on-device trong roadmap.",
       }
     };
 
