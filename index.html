@@ -556,7 +556,7 @@
         <span>🎂 <span data-i18n="hero.dob">Born 11 May 2004</span></span>
         <span>🎓 <span data-i18n="hero.edu">NEU · Computer Science · 2022–2026</span></span>
         <span>📊 <span data-i18n="hero.gpa">GPA 3.32 / 4.0</span></span>
-        <span>🏆 <span data-i18n="hero.award">2nd · AI Olympics 2025 (NCT)</span></span>
+        <span>🏆 <span data-i18n="hero.award"><a href="top%20NTC.jpg" target="_blank" style="color:inherit;text-decoration:underline">2nd · AI Olympics 2025 (NCT)</a></span></span>
       </div>
       <div class="hero-cta">
         <a class="btn primary" href="#projects" data-i18n="hero.cta1">View projects</a>
@@ -623,7 +623,7 @@
         <div class="label" data-i18n="skills.rag">RAG &amp; Search</div>
         <div class="chips">
           <span class="chip">Hybrid (BM25 + KNN)</span><span class="chip">Elasticsearch 8.x</span>
-          <span class="chip">ChromaDB</span><span class="chip">Pinecone</span>
+          <span class="chip">ChromaDB</span>
           <span class="chip">Sentence Transformers</span><span class="chip">Reranking</span>
         </div>
       </div>
@@ -673,6 +673,55 @@
           <span class="chip">Docker / Compose</span><span class="chip">Nginx Reverse Proxy</span>
           <span class="chip">NVIDIA GPU pinning</span><span class="chip">Arize Phoenix (OTEL)</span>
         </div>
+      </div>
+    </section>
+
+    <!-- AI TOOLS & IDEs -->
+    <section id="tools">
+      <div class="eyebrow">AI workflow</div>
+      <h2>AI Tools &amp; IDEs I Use Daily</h2>
+      <p class="lead" style="margin-top:8px">
+        Bộ công cụ AI và IDE tôi sử dụng hằng ngày để nghiên cứu, code, và vận hành mô hình — phối hợp giữa các agent CLI, runtime LLM cục bộ, công cụ tra cứu/tổng hợp và môi trường phát triển đa nền tảng.
+      </p>
+
+      <div class="grid grid-2" style="margin-top:20px;gap:16px">
+        <article class="card">
+          <span class="tag">AGENT CLI</span>
+          <h3>Coding Agents</h3>
+          <ul>
+            <li><b>Claude Code</b> — CLI agent chính thức của Anthropic, dùng để refactor, sinh code, và điều phối tác vụ đa file ngay trong terminal.</li>
+            <li><b>OpenClaw</b> — Agent CLI mã nguồn mở thay thế cho Claude Code, dùng cho các pipeline tự động hoá local.</li>
+            <li><b>Cline + Local LLM Coder</b> — Cline (VS Code) ghép với mô hình code chạy local (Qwen-Coder / DeepSeek-Coder qua Ollama) để code offline, không phụ thuộc cloud.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag">LOCAL LLM</span>
+          <h3>Local Model Runtimes</h3>
+          <ul>
+            <li><b>Ollama</b> — Runtime LLM cục bộ, dùng pull/serve các model 7B–14B (Qwen, Llama, Mistral) qua REST API trên RTX 5080.</li>
+            <li><b>LM Studio</b> — GUI chạy GGUF model offline, dùng để benchmark và thử prompt nhanh trước khi đưa vào pipeline production.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag">RESEARCH</span>
+          <h3>Knowledge &amp; Research</h3>
+          <ul>
+            <li><b>Perplexity</b> — Công cụ tra cứu AI có trích dẫn nguồn, dùng để khảo sát nhanh paper, framework, và best practice mới.</li>
+            <li><b>NotebookLM</b> — Của Google, dùng để tổng hợp tài liệu nội bộ (PDF, slide) thành brief có nguồn để onboard kiến thức nhanh.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag">IDE</span>
+          <h3>Development Environments</h3>
+          <ul>
+            <li><b>VS Code</b> — IDE chính cho Python/TypeScript/Docker, tích hợp Cline, Copilot và remote-WSL.</li>
+            <li><b>Antigravity IDE</b> — IDE agentic của Google, thử nghiệm cho workflow đa-agent trên cùng một codebase.</li>
+            <li><b>Android Studio</b> — Phát triển và debug ứng dụng Android, đặc biệt cho các sản phẩm AI on-device trong roadmap.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -780,7 +829,7 @@
                   single query.</li>
                 <li data-i18n="proj.aichat.l9">Ingestion supporting digital extraction + <b>OCR fallback</b> for scanned
                   docs with adaptive DPI.</li>
-                <li data-i18n="proj.aichat.l10">Dual-write to Pinecone &amp; Elasticsearch with thread-level metadata
+                <li data-i18n="proj.aichat.l10">Dual-write to Chroma &amp; Elasticsearch with thread-level metadata
                   filtering.</li>
               </ul>
             </div>
@@ -923,13 +972,13 @@
         <article class="card">
           <h3 data-i18n="ach.title">Achievements &amp; Languages</h3>
           <ul>
-            <li data-i18n="ach.l1"><b>2nd Place</b> — AI Olympics 2025, NEU College of Technology (NCT)</li>
+            <li data-i18n="ach.l1"><b>2nd Place</b> — <a href="top%20NTC.jpg" target="_blank" style="color:inherit">AI Olympics 2025, NEU College of Technology (NCT)</a></li>
             <li data-i18n="ach.l2"><b>English:</b> Advanced (technical reading/writing)</li>
             <li data-i18n="ach.l3"><b>Vietnamese:</b> Native</li>
           </ul>
 
           <h4 style="margin-top:18px" data-i18n="exp.title">Work Experience</h4>
-          <div class="meta" data-i18n="exp.role2">IT Staff — Công ty TNHH MH Rental · 2025 – Present</div>
+          <div class="meta" data-i18n="exp.role2">IT Staff — Công ty TNHH MH Rental · 2026 – Present</div>
           <p style="color:var(--muted);font-size:14.5px;margin:6px 0 0" data-i18n="exp.body2">
             Managing internal IT infrastructure, network systems, and deploying AI-powered tools for operational
             efficiency.
@@ -1021,7 +1070,7 @@
         "hero.name": "Do Pho Hieu Anh",
         "hero.dob": "Born 11 May 2004",
         "hero.lead": "Final-year Computer Science student building self-hosted, production-grade AI ecosystems — from LangGraph ReAct orchestration and Model Context Protocol microservices, to hybrid retrieval, GPU-accelerated OCR, and hallucination guardrails. Zero managed cloud AI required.",
-        "hero.loc": "Hanoi, Vietnam", "hero.edu": "NEU · Computer Science · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "2nd · AI Olympics 2025 (NCT)",
+        "hero.loc": "Hanoi, Vietnam", "hero.edu": "NEU · Computer Science · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "<a href='top%20NTC.jpg' target='_blank' style='color:inherit;text-decoration:underline'>2nd · AI Olympics 2025 (NCT)</a>",
         "hero.cta1": "View projects", "hero.cta2": "Get in touch", "hero.cta3": "Download CV",
         "stat.containers": "Docker services", "stat.mcp": "MCP microservices", "stat.vram": "VRAM saved (NF4)", "stat.credits": "Credits earned",
 
@@ -1050,7 +1099,7 @@
         "proj.aichat.l7": "Hard security blocks at the tool-node level to strictly control internet-search access.",
         "proj.aichat.l8": "<b>Elasticsearch 8.x hybrid search</b>: dense KNN combined with BM25 in a single query.",
         "proj.aichat.l9": "Ingestion supporting digital extraction + <b>OCR fallback</b> for scanned docs with adaptive DPI.",
-        "proj.aichat.l10": "Dual-write to Pinecone & Elasticsearch with thread-level metadata filtering.",
+        "proj.aichat.l10": "Dual-write to Chroma & Elasticsearch with thread-level metadata filtering.",
         "proj.aichat.l11": "<b>GOT-OCR 2.0</b> on GPU containers with aggressive cleaners filtering repetition loops & junk sequences.",
         "proj.aichat.l12": "<b>BERTScore middleware</b>: scores Final Answers vs. observations, intercepting <code>F1 < 0.15</code>.",
         "proj.aichat.l13": "<b>SearXNG + Firecrawl</b> for multi-threaded scraping into clean Markdown via RabbitMQ queue.",
@@ -1086,11 +1135,11 @@
         "c.java": "Java Programming",
 
         "ach.title": "Achievements & Languages",
-        "ach.l1": "<b>2nd Place</b> — AI Olympics 2025, NEU College of Technology (NCT)",
+        "ach.l1": "<b>2nd Place</b> — <a href='top%20NTC.jpg' target='_blank' style='color:inherit'>AI Olympics 2025, NEU College of Technology (NCT)</a>",
         "ach.l2": "<b>English:</b> Advanced (technical reading/writing)",
         "ach.l3": "<b>Vietnamese:</b> Native",
         "exp.title": "Work Experience",
-        "exp.role2": "IT Staff — MH Rental Company (TNHH MH Rental) · 2025 – Present",
+        "exp.role2": "IT Staff — MH Rental Company (TNHH MH Rental) · 2026 – Present",
         "exp.body2": "Managing internal IT infrastructure, network systems, and deploying AI-powered tools for operational efficiency.",
         "exp.role": "Marketing Collaborator — SEC English Center · 2023 – 2024",
         "exp.body": "Executed digital marketing campaigns across social media, increasing brand awareness and student enrollment.",
@@ -1140,7 +1189,7 @@
         "hero.name": "Đỗ Phó Hiếu Anh",
         "hero.dob": "Sinh ngày 11/05/2004",
         "hero.lead": "Sinh viên Khoa học Máy tính năm cuối, xây dựng các hệ thống AI tự host, đạt chuẩn production — từ điều phối LangGraph ReAct và microservices Model Context Protocol, đến tìm kiếm hybrid, OCR tăng tốc GPU và lớp chống hallucination. Hoàn toàn không cần dịch vụ AI cloud.",
-        "hero.loc": "Hà Nội, Việt Nam", "hero.edu": "NEU · Khoa học Máy tính · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "Giải Nhì · AI Olympics 2025 (NCT)",
+        "hero.loc": "Hà Nội, Việt Nam", "hero.edu": "NEU · Khoa học Máy tính · 2022–2026", "hero.gpa": "GPA 3.32 / 4.0", "hero.award": "<a href='top%20NTC.jpg' target='_blank' style='color:inherit;text-decoration:underline'>Giải Nhì · AI Olympics 2025 (NCT)</a>",
         "hero.cta1": "Xem dự án", "hero.cta2": "Liên hệ", "hero.cta3": "Tải CV",
         "stat.containers": "Container Docker", "stat.mcp": "Microservices MCP", "stat.vram": "Tiết kiệm VRAM (NF4)", "stat.credits": "Tín chỉ tích luỹ",
 
@@ -1169,7 +1218,7 @@
         "proj.aichat.l7": "Chặn cứng quyền truy cập internet ở tầng tool-node để kiểm soát chặt chẽ.",
         "proj.aichat.l8": "<b>Hybrid search Elasticsearch 8.x</b>: KNN dense + BM25 trong cùng một query.",
         "proj.aichat.l9": "Pipeline ingest hỗ trợ trích xuất số + <b>fallback OCR</b> cho tài liệu scan với DPI thích ứng.",
-        "proj.aichat.l10": "Ghi song song Pinecone & Elasticsearch, lọc metadata theo thread.",
+        "proj.aichat.l10": "Ghi song song Chroma & Elasticsearch, lọc metadata theo thread.",
         "proj.aichat.l11": "<b>GOT-OCR 2.0</b> trên container GPU, cleaner mạnh lọc vòng lặp & ký tự rác.",
         "proj.aichat.l12": "<b>Middleware BERTScore</b>: chấm Final Answer so với observation, chặn <code>F1 < 0.15</code>.",
         "proj.aichat.l13": "<b>SearXNG + Firecrawl</b> scrape đa luồng ra Markdown sạch qua hàng đợi RabbitMQ.",
@@ -1205,11 +1254,11 @@
         "c.java": "Lập trình Java",
 
         "ach.title": "Thành tích & Ngôn ngữ",
-        "ach.l1": "<b>Giải Nhì</b> — AI Olympics 2025, Khoa Công nghệ NEU (NCT)",
+        "ach.l1": "<b>Giải Nhì</b> — <a href='top%20NTC.jpg' target='_blank' style='color:inherit'>AI Olympics 2025, Khoa Công nghệ NEU (NCT)</a>",
         "ach.l2": "<b>Tiếng Anh:</b> Nâng cao (đọc/viết kỹ thuật)",
         "ach.l3": "<b>Tiếng Việt:</b> Bản ngữ",
         "exp.title": "Kinh nghiệm làm việc",
-        "exp.role2": "Nhân viên IT — Công ty TNHH MH Rental · 2025 – Hiện tại",
+        "exp.role2": "Nhân viên IT — Công ty TNHH MH Rental · 2026 – Hiện tại",
         "exp.body2": "Quản lý hạ tầng IT nội bộ, hệ thống mạng và triển khai các công cụ AI để nâng cao hiệu quả vận hành.",
         "exp.role": "Cộng tác viên Marketing — Trung tâm Anh ngữ SEC · 2023 – 2024",
         "exp.body": "Triển khai các chiến dịch digital marketing trên mạng xã hội, tăng nhận diện thương hiệu và số lượng học viên đăng ký.",
